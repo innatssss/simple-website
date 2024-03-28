@@ -146,17 +146,12 @@ body {
 // navigation style
 .main-nav {
   background-color: #5474fd;
-  height: 10vh;
-
+  width: 100%;
   .nav-bar {
     @include flex-container(row, space-evenly, center);
     list-style: none;
     height: 10vh;
-    overflow: hidden;
-    width: 100vw;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+    width: 100%;
 
     .right-nav {
       @include flex-container(row, space-between, center);
