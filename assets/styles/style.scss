@@ -138,6 +138,7 @@ body {
   }
   .scroll-down {
     @include flex-container(column, center, center);
+    @include logo(0.875rem, 2.8px);
     margin-top: 172px;
     cursor: pointer;
   }
@@ -157,44 +158,231 @@ body {
       gap: 2rem;
 
       .nav-bar__link {
-        @include main-text(0.875rem, 1.4px);
-        text-transform: uppercase;
         text-decoration: none;
         position: relative;
 
-        &::after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          transform: scaleX(0);
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: #ffffff;
-          transform-origin: bottom right;
-          transition: transform 0.25s ease-out;
-        }
+        span {
+          @include main-text(0.875rem, 1.4px);
+          text-transform: uppercase;
 
-        &:hover::after {
-          transform: scaleX(1);
-          transform-origin: bottom left;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffffff;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .left-nav {
+    display: none;
+  }
+}
+
+// @media (max-width: 580px) {
+//   .right-nav {
+//     span {
+//       @include main-text(0.5rem, 1.5px);
+//     }
+//   }
+// }
+
+// why choose us section
+@mixin main-button {
+  width: 228px;
+  height: 63px;
+  margin-top: 2rem;
+  background: linear-gradient(237deg, #5474fd 57%, #496bfe 24%);
+  font-size: $base-font-size;
+  border: none;
+  letter-spacing: 1.2px;
+}
+
+#about-us {
+  @include flex-container(row, center, center);
+  background: url("../images/why-choose-us-bg.png") no-repeat center
+    center/cover;
+  height: 80vh;
+  padding: 20%;
+
+  .left-container {
+    margin-right: 6rem;
+    width: 60%;
+    h3 {
+      @include main-text(2.25rem, 0px);
+    }
+    p {
+      @include logo(1rem, 1.6px);
+      margin-top: 50px;
+      line-height: 26px;
+    }
+    .main-btn {
+      @include main-button();
+      &:hover {
+        background: #496bfe;
+      }
+    }
+  }
+  .right-container {
+    width: 40%;
+
+    .img-2 {
+      margin-left: 90px;
     }
   }
   @media (max-width: 780px) {
-    .left-nav {
-      display: none;
+    display: grid;
+    grid-template-rows: auto;
+    height: fit-content;
+    gap: 1rem;
+    padding: 2rem;
+    .left-container {
+      width: 100%;
     }
-  }
 
-  @media (max-width: 580px) {
-    .right-nav {
-      gap: 6px;
+    .right-container {
+      width: 100%;
+      margin-top: 2rem;
 
-      .nav-bar__link {
-        @include main-text(0.5rem, 1px);
+      .img-2 {
+        margin-top: 2rem;
+        margin-left: 90px;
       }
     }
+  }
+  @media (max-width: 500px) {
+    .left-container {
+      margin: 2rem;
+      width: 80%;
+      padding: 0;
+
+      h3 {
+        @include main-text(1.75rem, 0px);
+      }
+      p {
+        @include logo(1rem, 1.6px);
+        margin-top: 0;
+        line-height: 26px;
+      }
+    }
+    .right-container {
+      width: 80%;
+      margin-top: 2rem;
+
+      .img-2 {
+        margin-top: 2rem;
+        margin: 0;
+      }
+    }
+  }
+}
+
+#svg-menu {
+  @include flex-container(row, space-evenly, center);
+  height: 340px;
+  background: #333333;
+  background-image: url(../svg/Shape\ 1.svg);
+  .svg-block {
+    @include flex-container(column, center, center);
+    gap: 1rem;
+    p {
+      @include main-text(2.25rem, 0);
+    }
+  }
+}
+
+%bg-card {
+  width: 543px;
+  height: fit-content;
+  background-color: rgb(35, 35, 35, 0.9);
+  padding: 30px;
+  position: relative;
+}
+
+#book-1 {
+  @include flex-container(row, start, center);
+  background: url("../images/grand-spain-1.png") no-repeat center center/cover;
+  height: 80vh;
+  .card {
+    @extend %bg-card;
+    margin-left: 15%;
+
+    h3 {
+      @include logo(1.25rem, 1.5px);
+      margin-bottom: 30px;
+    }
+    h4 {
+      @include logo(1.25rem, 0);
+      margin-bottom: 30px;
+    }
+    p {
+      @include logo(1rem, 0);
+      margin-bottom: 30px;
+      line-height: 26px;
+    }
+    .main-btn {
+      @include main-button();
+
+      &:hover {
+        background: #496bfe;
+      }
+    }
+
+    @media (max-width: 580px) {
+      margin-left: 5%;
+      width: 90%;
+    }
+  }
+}
+
+#book-2 {
+  @include flex-container(row, end, center);
+  background: url("../images/grand-spain-bg-2.png") no-repeat center
+    center/cover;
+  height: 80vh;
+  .card-2 {
+    @extend %bg-card;
+    margin-right: 15%;
+
+    h3 {
+      @include logo(1.25rem, 1.5px);
+      margin-bottom: 30px;
+    }
+    h4 {
+      @include logo(1.25rem, 0);
+      margin-bottom: 30px;
+    }
+    p {
+      @include logo(1rem, 0);
+      margin-bottom: 30px;
+      line-height: 26px;
+    }
+    .main-btn {
+      @include main-button();
+
+      &:hover {
+        background: #496bfe;
+      }
+    }
+
+    @media (max-width: 580px) {
+      margin-right: 5%;
+      width: 90%;
+    } 
   }
 }
