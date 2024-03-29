@@ -316,7 +316,11 @@ body {
   background: #333333;
   .svg-block {
     @include flex-container(column, center, center);
+    transition: all 200ms ease-in-out;
     gap: 1rem;
+    &:hover {
+      scale: 1.2;
+    }
     p {
       @include main-text(2.25rem, 0);
     }
