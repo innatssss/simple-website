@@ -155,7 +155,7 @@ body {
 
     .right-nav {
       @include flex-container(row, space-between, center);
-      gap: 2rem;
+      gap: 1.5rem;
 
       .nav-bar__link {
         text-decoration: none;
@@ -182,25 +182,43 @@ body {
             transform: scaleX(1);
             transform-origin: bottom left;
           }
+
+          @media (max-width: 580px) {
+            @include main-text(0.7rem, 1.4px);
+          }
+
+          @media (max-width: 480px) {
+            @include main-text(1.5rem, 1.4px);
+          }
         }
       }
     }
+    @media (max-width: 480px) {
+      @include flex-container(row, start, center);
+      height: fit-content;
+      .right-nav {
+        @include flex-container(column, start, start);
+        gap: 1.5rem;
+        margin: 2rem;
+      }
+    }
+    @media (max-width: 780px) {
+      .left-nav {
+        display: none;
+      }
+    }
   }
-}
 
-@media (max-width: 780px) {
-  .left-nav {
-    display: none;
-  }
+  // @media (max-width: 580px) {
+  //   .right-nav {
+  //     @include flex-container(column, center, spy);
+  //     gap: 0;
+  //     span {
+  //       text-transform: lowercase;
+  //     }
+  //   }
+  // }
 }
-
-// @media (max-width: 580px) {
-//   .right-nav {
-//     span {
-//       @include main-text(0.5rem, 1.5px);
-//     }
-//   }
-// }
 
 // why choose us section
 @mixin main-button {
@@ -296,12 +314,30 @@ body {
   @include flex-container(row, space-evenly, center);
   height: 340px;
   background: #333333;
-  background-image: url(../svg/Shape\ 1.svg);
   .svg-block {
     @include flex-container(column, center, center);
     gap: 1rem;
     p {
       @include main-text(2.25rem, 0);
+    }
+  }
+
+  @media (max-width: 780px) {
+    padding: 30px;
+    .svg-block {
+      gap: 0.5rem;
+      padding: 0.5rem;
+      p {
+        @include main-text(1.5rem, 0);
+      }
+    }
+  }
+  @media (max-width: 580px) {
+    @include flex-container(column, center, space-evenly);
+    height: fit-content;
+    row-gap: 1rem;
+    .svg-block {
+      gap: 1rem;
     }
   }
 }
@@ -388,5 +424,97 @@ body {
       margin-right: 5%;
       width: 90%;
     }
+  }
+}
+
+#tourist {
+  @include flex-container(column, center, center);
+  background: url("../images/sam-sumon-bg.png") no-repeat center center/cover;
+  height: 90vh;
+  h3 {
+    @include main-text(2.25rem, 0);
+    margin-bottom: 90px;
+  }
+  .flex-tourist {
+    @include flex-container(row, center, center);
+    @extend %bg-card;
+    padding: 0;
+    width: 85%;
+    height: fit-content;
+
+    .right-img-cont {
+      height: 284px;
+    }
+
+    .left-text-cont {
+      margin: 0px 30px;
+      h4 {
+        @include logo(1.25rem, 0);
+        text-transform: uppercase;
+        margin: 30px 0px;
+      }
+      p {
+        @include logo(1rem, 0);
+        line-height: 26px;
+        margin-bottom: 30px;
+
+        .color-quotes {
+          font-size: 3rem;
+          color: #5474fd;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 880px) {
+    .flex-tourist {
+      width: 95%;
+      .right-img-cont {
+        height: 220px;
+      }
+    }
+  }
+  @media (max-width: 780px) {
+    width: 100%;
+    .flex-tourist {
+      @include flex-container(column, start, center);
+      width: 100%;
+      .right-img-cont {
+        height: 284px;
+      }
+    }
+  }
+  @media (max-width: 580px) {
+    h3 {
+      @include main-text(1.75rem, 0);
+      margin-bottom: 40px;
+      margin-top: 16px;
+    }
+    .left-text-cont {
+      margin: 30px;
+    }
+  }
+}
+
+#footer {
+  @include flex-container(column, center, center);
+  background-color: #232323;
+  width: 100%;
+  height: 30vh;
+  row-gap: 30px;
+  padding-top: 2rem;
+  h3 {
+    @include logo(1.5rem, 3.36px);
+    text-transform: uppercase;
+  }
+  p {
+    @include logo(1rem, 1.6px);
+  }
+  .svg-social-media {
+    @include flex-container(row, center, center);
+    gap: 1rem;
+  }
+  @media (max-width: 580px) {
+    height: 50vh;
   }
 }
