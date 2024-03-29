@@ -358,6 +358,11 @@ body {
   line-height: 26px;
 }
 #book-1 .card .main-btn {
+  color: #FFFFFF;
+  font-family: "Aleo";
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
   width: 228px;
   height: 63px;
   margin-top: 2rem;
@@ -410,6 +415,11 @@ body {
   line-height: 26px;
 }
 #book-2 .card-2 .main-btn {
+  color: #FFFFFF;
+  font-family: "Aleo";
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
   width: 228px;
   height: 63px;
   margin-top: 2rem;

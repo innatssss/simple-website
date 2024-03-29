@@ -336,6 +336,8 @@ body {
       line-height: 26px;
     }
     .main-btn {
+      @include main-text(1rem, 1.2px);
+      text-transform: uppercase;
       @include main-button();
 
       &:hover {
@@ -373,6 +375,8 @@ body {
       line-height: 26px;
     }
     .main-btn {
+      @include main-text(1rem, 1.2px);
+      text-transform: uppercase;
       @include main-button();
 
       &:hover {
@@ -383,6 +387,6 @@ body {
     @media (max-width: 580px) {
       margin-right: 5%;
       width: 90%;
-    } 
+    }
   }
 }
