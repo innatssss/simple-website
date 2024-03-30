@@ -143,12 +143,14 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 172px;
+}
+.flex-header .scroll-down a {
   color: #FFFFFF;
   font-family: "Josefin Sans";
   font-size: 0.875rem;
   letter-spacing: 2.8px;
-  margin-top: 172px;
-  cursor: pointer;
+  text-decoration: none;
 }
 
 .main-nav {

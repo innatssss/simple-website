@@ -141,9 +141,11 @@ body {
   }
   .scroll-down {
     @include flex-container(column, center, center);
-    @include logo(0.875rem, 2.8px);
     margin-top: 172px;
-    cursor: pointer;
+    a {
+      @include logo(0.875rem, 2.8px);
+      text-decoration: none;
+    }
   }
 }
 
