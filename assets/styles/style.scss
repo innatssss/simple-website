@@ -85,6 +85,9 @@ body {
 
       &:focus {
         color: #000000;
+        &::placeholder {
+          color: transparent;
+        }
       }
     }
     .search-button {
@@ -305,24 +308,45 @@ body {
 }
 
 #svg-menu {
-  @include flex-container(row, space-evenly, center);
+  @include flex-container(column, center, center);
   height: 340px;
   background-color: #333333;
-  // background: url("../svg/Shape\ 1.svg") no-repeat center #333333;
-  // padding-top: 7rem;
-  // padding-left: 2rem;
-  .svg-block {
+  .curve {
     @include flex-container(column, center, center);
-    transition: all 200ms ease-in-out;
-    gap: 1rem;
-    &:hover {
-      scale: 1.2;
-    }
-    p {
-      @include main-text(2.25rem, 0);
+    width: 100%;
+    margin-left: 13%;
+    z-index: 1;
+    margin-bottom: -40px;
+  }
+  .svg-row {
+    @include flex-container(row, space-evenly, center);
+    width: 100%;
+    .svg-block {
+      @include flex-container(column, center, center);
+      transition: all 200ms ease-in-out;
+      gap: 1rem;
+      .circle {
+        width: 99px;
+        height: 99px;
+        border-radius: 50%;
+        z-index: 2;
+        margin-bottom: -99px;
+        background-color: #333333;
+      }
+      svg {
+        z-index: 9;
+      }
+      p {
+        @include main-text(2.25rem, 0);
+      }
     }
   }
 
+  @media (max-width: 1450px) {
+    .curve {
+      display: none;
+    }
+  }
   @media (max-width: 780px) {
     padding: 30px;
     .svg-block {
