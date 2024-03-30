@@ -208,16 +208,6 @@ body {
       }
     }
   }
-
-  // @media (max-width: 580px) {
-  //   .right-nav {
-  //     @include flex-container(column, center, spy);
-  //     gap: 0;
-  //     span {
-  //       text-transform: lowercase;
-  //     }
-  //   }
-  // }
 }
 
 // why choose us section
@@ -229,6 +219,7 @@ body {
   font-size: $base-font-size;
   border: none;
   letter-spacing: 1.2px;
+  cursor: pointer;
 }
 
 #about-us {
@@ -251,6 +242,9 @@ body {
     }
     .main-btn {
       @include main-button();
+      @include main-text(1rem, 1.2px);
+      text-transform: uppercase;
+
       &:hover {
         background: #496bfe;
       }
@@ -313,7 +307,10 @@ body {
 #svg-menu {
   @include flex-container(row, space-evenly, center);
   height: 340px;
-  background: #333333;
+  background-color: #333333;
+  // background: url("../svg/Shape\ 1.svg") no-repeat center #333333;
+  // padding-top: 7rem;
+  // padding-left: 2rem;
   .svg-block {
     @include flex-container(column, center, center);
     transition: all 200ms ease-in-out;

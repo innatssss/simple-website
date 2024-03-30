@@ -265,6 +265,12 @@ body {
   font-size: 1rem;
   border: none;
   letter-spacing: 1.2px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-family: "Aleo";
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 #about-us .left-container .main-btn:hover {
   background: #496bfe;
@@ -332,7 +338,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   height: 340px;
-  background: #333333;
+  background-color: #333333;
 }
 #svg-menu .svg-block {
   display: flex;
@@ -436,6 +442,7 @@ body {
   font-size: 1rem;
   border: none;
   letter-spacing: 1.2px;
+  cursor: pointer;
 }
 #book-1 .card .main-btn:hover {
   background: #496bfe;
@@ -493,6 +500,7 @@ body {
   font-size: 1rem;
   border: none;
   letter-spacing: 1.2px;
+  cursor: pointer;
 }
 #book-2 .card-2 .main-btn:hover {
   background: #496bfe;
